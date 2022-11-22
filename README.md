@@ -1,37 +1,44 @@
-### Web application
+### vtitbid-tech
 
-Web application description.
+Данный репозиторий хранит в себе исходники веб-сайта vtitbid.tech,
+использующегося для агитации и информирования участников студенческой 
+исследовательской группы VTITBiD.TECH.
 
 ### Running
 
-To run the application in Development mode execute the following:
+Чтобы запустить приложение в режиме разработчика:
 
 ```shell
 ./gradlew run
 ```
 
-### Building
+### Компиляция
 
-To build the application:
+Чтобы сбилдить веб-приложение запустите следующее:
 
 ```shell
 ./gradlew build
 ```
 
-Binaries will be located at `./build/distributions`.
+Бинарники будут находиться в `./build/distributions`.
 
-### How to contribute
+### Как сделать свой вклад?
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Форкните проект.
+- Склонируйте ваш форк.
+- Создайте ветку, на которой вы будете работать.
+- Поработайте над своими изменениями...
+- Пушьте изменения.
+- Открывайте pull request.
 
-### Code of Conduct
+### Правила поведения
 
-See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+Просмотрите документ на английском языке [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
 
-### License
+### Лицензия
 
 ```
-Copyright 2022 Mikhail Titov
+Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

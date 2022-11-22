@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Mikhail Titov
+ * Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,4 +31,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "kotlin-js-web-app-template"
+rootProject.name = "vtitbid-tech"
