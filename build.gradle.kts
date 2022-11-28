@@ -36,10 +36,11 @@ val kotlinVersion: String by project
 val kvisionVersion: String by project
 
 dependencies {
+    implementation(npm("@primer/css", "20.7.1"))
+    implementation(npm("sass-loader", "13.2.0"))
+    implementation(npm("sass", "1.56.1"))
     implementation("io.kvision:kvision:$kvisionVersion")
     implementation("io.kvision:kvision-state:$kvisionVersion")
-    implementation("io.kvision:kvision-bootstrap:$kvisionVersion")
-    implementation("io.kvision:kvision-bootstrap-css:$kvisionVersion")
 }
 
 val webDir = file("src/main/web")
