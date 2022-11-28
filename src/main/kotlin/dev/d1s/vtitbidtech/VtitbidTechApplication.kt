@@ -14,34 +14,33 @@
  * limitations under the License.
  */
 
-package dev.d1s.webapp
+package dev.d1s.vtitbidtech
 
-import dev.d1s.webapp.component.pointReporter
-import io.kvision.*
-import io.kvision.core.Background
-import io.kvision.core.Col
-import io.kvision.core.Color
+import dev.d1s.vtitbidtech.component.header
+import dev.d1s.vtitbidtech.module.PrimerCssModule
+import io.kvision.Application
+import io.kvision.CoreModule
+import io.kvision.module
 import io.kvision.panel.root
+import io.kvision.startApplication
 import io.kvision.utils.perc
 
-class TemplateApplication : Application() {
+class VtitbidTechApplication : Application() {
 
     override fun start() {
         root("root") {
             width = 100.perc
-            background = Background(Color.name(Col.BLACK))
 
-            pointReporter()
+            header()
         }
     }
 }
 
 fun main() {
     startApplication(
-        ::TemplateApplication,
+        ::VtitbidTechApplication,
         module.hot,
-        BootstrapModule,
-        BootstrapCssModule,
-        CoreModule
+        CoreModule,
+        PrimerCssModule
     )
 }
