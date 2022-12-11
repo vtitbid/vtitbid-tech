@@ -14,21 +14,9 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.util
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+object Brand {
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
-
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    const val NAME_RUS = "ВТИТБиД.ТЕХ"
 }

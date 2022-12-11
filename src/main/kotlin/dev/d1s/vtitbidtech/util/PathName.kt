@@ -14,21 +14,9 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.util
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import kotlinx.browser.document
+import org.w3c.dom.url.URL
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
-
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
-}
+val pathName get() = URL(document.URL).pathname

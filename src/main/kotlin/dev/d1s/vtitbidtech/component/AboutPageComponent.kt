@@ -14,21 +14,25 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.component
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import dev.d1s.vtitbidtech.util.displayHeading
+import dev.d1s.vtitbidtech.util.highlight
+import io.kvision.html.span
+import io.kvision.html.textNode
+import io.kvision.panel.SimplePanel
+import org.koin.core.component.KoinComponent
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+class AboutPageComponent : Component, KoinComponent {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
+    override fun SimplePanel.render() {
+        displayHeading {
+            textNode("Строим информационное будущее техникума. ")
+            span("Вместе.") {
+                highlight()
+            }
+        }
+
+
     }
 }

@@ -14,21 +14,19 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.component.renderer
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import dev.d1s.vtitbidtech.component.Component
+import dev.d1s.vtitbidtech.util.deploy
+import io.kvision.panel.Root
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+class RootComponentRenderer : ComponentRenderer, KoinComponent {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
+    private val rootComponent by inject<Component.Root>()
+
+    override fun render(root: Root) {
+        root.deploy(rootComponent)
     }
 }

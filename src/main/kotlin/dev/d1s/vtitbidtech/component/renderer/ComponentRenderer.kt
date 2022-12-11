@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +14,11 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.component.renderer
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import io.kvision.panel.Root
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+interface ComponentRenderer {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    fun render(root: Root)
 }

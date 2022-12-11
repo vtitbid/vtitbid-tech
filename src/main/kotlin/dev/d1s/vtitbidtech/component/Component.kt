@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.component
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import io.kvision.panel.SimplePanel
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+interface Component {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    fun SimplePanel.render()
+
+    interface Root : Component
 }

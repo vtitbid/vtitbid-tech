@@ -14,21 +14,11 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.util
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import io.kvision.core.Color
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+object Color {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    val Green = Color.hex(0x027360)
 }

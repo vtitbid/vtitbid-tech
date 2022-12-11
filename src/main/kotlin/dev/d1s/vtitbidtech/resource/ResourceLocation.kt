@@ -14,21 +14,11 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.resource
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import io.kvision.core.ResString
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+object ResourceLocation {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    const val LOGO: ResString = "vtitbid.tech-logo-no-padding.svg"
 }

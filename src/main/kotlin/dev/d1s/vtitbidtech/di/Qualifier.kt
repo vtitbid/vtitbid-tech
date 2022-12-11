@@ -14,21 +14,15 @@
  * limitations under the License.
  */
 
-rootProject.name = "vtitbid-tech"
+package dev.d1s.vtitbidtech.di
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
-    }
+import org.koin.core.qualifier.named
 
-    plugins {
-        val kotlinVersion: String by settings
-        val kvisionVersion: String by settings
+object Qualifier {
 
-        kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
-        id("io.kvision") version kvisionVersion
-    }
+    val FormModalComponent = named("form-modal-component")
+    val NavbarComponent = named("navbar-component")
+    val PageContentComponent = named("page-content-component")
+    val AboutPageComponent = named("about-page-component")
+    val FormPageComponent = named("form-page-component")
 }

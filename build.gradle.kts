@@ -32,15 +32,17 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion: String by project
-val kvisionVersion: String by project
-
 dependencies {
-    implementation(npm("@primer/css", "20.7.1"))
-    implementation(npm("sass-loader", "13.2.0"))
-    implementation(npm("sass", "1.56.1"))
+    val kvisionVersion: String by project
+
+    val koinVersion: String by project
+
     implementation("io.kvision:kvision:$kvisionVersion")
     implementation("io.kvision:kvision-state:$kvisionVersion")
+    implementation("io.kvision:kvision-bootstrap:$kvisionVersion")
+    implementation("io.kvision:kvision-bootstrap-css:$kvisionVersion")
+
+    implementation("io.insert-koin:koin-core:$koinVersion")
 }
 
 val webDir = file("src/main/web")

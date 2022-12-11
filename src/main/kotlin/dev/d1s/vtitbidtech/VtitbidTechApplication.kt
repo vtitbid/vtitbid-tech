@@ -16,31 +16,40 @@
 
 package dev.d1s.vtitbidtech
 
-import dev.d1s.vtitbidtech.component.header
-import dev.d1s.vtitbidtech.module.PrimerCssModule
-import io.kvision.Application
-import io.kvision.CoreModule
-import io.kvision.module
+import dev.d1s.vtitbidtech.di.setupDi
+import dev.d1s.vtitbidtech.component.renderer.ComponentRenderer
+import io.kvision.*
 import io.kvision.panel.root
-import io.kvision.startApplication
 import io.kvision.utils.perc
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class VtitbidTechApplication : Application() {
+class VtitbidTechApplication : Application(), KoinComponent {
+
+    private val componentRenderer by inject<ComponentRenderer>()
 
     override fun start() {
-        root("root") {
+        root(ROOT_ELEMENT_ID) {
             width = 100.perc
 
-            header()
+            componentRenderer.render(this)
         }
+    }
+
+    private companion object {
+
+        private const val ROOT_ELEMENT_ID = "root"
     }
 }
 
 fun main() {
+    setupDi()
+
     startApplication(
         ::VtitbidTechApplication,
         module.hot,
         CoreModule,
-        PrimerCssModule
+        BootstrapModule,
+        BootstrapCssModule
     )
 }
