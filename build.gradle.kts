@@ -38,7 +38,6 @@ dependencies {
     val koinVersion: String by project
 
     implementation("io.kvision:kvision:$kvisionVersion")
-    implementation("io.kvision:kvision-state:$kvisionVersion")
     implementation("io.kvision:kvision-bootstrap:$kvisionVersion")
     implementation("io.kvision:kvision-bootstrap-css:$kvisionVersion")
 
