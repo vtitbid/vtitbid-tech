@@ -29,7 +29,6 @@ class RootComponent : Component.Root, KoinComponent {
 
     private val navbarComponent by inject<Component>(Qualifier.NavbarComponent)
     private val pageContentComponent by inject<Component>(Qualifier.PageContentComponent)
-    private val formModalComponent by inject<Component>(Qualifier.FormModalComponent)
 
     override fun SimplePanel.render() {
         width = 100.perc
@@ -40,7 +39,6 @@ class RootComponent : Component.Root, KoinComponent {
             marginTop = 5.rem
 
             deploy(pageContentComponent)
-            deploy(formModalComponent)
         }
     }
 }
