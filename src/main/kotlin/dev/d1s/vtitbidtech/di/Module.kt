@@ -38,10 +38,6 @@ private val mainModule = module {
 private fun Module.components() {
     singleOf<Component.Root>(::RootComponent)
 
-    singleOf<Component>(::FormModalComponent) {
-        qualifier = Qualifier.FormModalComponent
-    }
-
     singleOf<Component>(::NavbarComponent) {
         qualifier = Qualifier.NavbarComponent
     }

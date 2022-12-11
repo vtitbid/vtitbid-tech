@@ -20,7 +20,6 @@ import org.koin.core.qualifier.named
 
 object Qualifier {
 
-    val FormModalComponent = named("form-modal-component")
     val NavbarComponent = named("navbar-component")
     val PageContentComponent = named("page-content-component")
     val AboutPageComponent = named("about-page-component")
