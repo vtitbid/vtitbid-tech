@@ -32,7 +32,5 @@ class AboutPageComponent : Component, KoinComponent {
                 highlight()
             }
         }
-
-
     }
 }

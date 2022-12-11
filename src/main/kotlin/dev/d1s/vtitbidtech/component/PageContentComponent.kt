@@ -31,7 +31,7 @@ class PageContentComponent : Component, KoinComponent {
     private val aboutPageComponent by inject<Component>(Qualifier.AboutPageComponent)
 
     override fun SimplePanel.render() {
-        div(className = "container mt-3") {
+        div(className = "container pt-5") {
             when (pathName) {
                 Path.APPLY -> {
                     deploy(formComponent)
