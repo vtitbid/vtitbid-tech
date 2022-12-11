@@ -32,7 +32,7 @@ import org.koin.core.component.KoinComponent
 class NavbarComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        nav(className = "navbar navbar-expand-lg navbar-light bg-light border border-dark fixed-top") {
+        nav(className = "navbar navbar-expand-lg navbar-light bg-light fixed-top shadow") {
             div(className = "container") {
                 logo()
                 name()
