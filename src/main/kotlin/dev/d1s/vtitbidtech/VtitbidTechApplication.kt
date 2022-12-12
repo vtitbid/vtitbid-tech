@@ -16,11 +16,10 @@
 
 package dev.d1s.vtitbidtech
 
-import dev.d1s.vtitbidtech.di.setupDi
 import dev.d1s.vtitbidtech.component.renderer.ComponentRenderer
+import dev.d1s.vtitbidtech.di.setupDi
 import io.kvision.*
 import io.kvision.panel.root
-import io.kvision.utils.perc
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -30,8 +29,6 @@ class VtitbidTechApplication : Application(), KoinComponent {
 
     override fun start() {
         root(ROOT_ELEMENT_ID) {
-            width = 100.perc
-
             componentRenderer.render(this)
         }
     }

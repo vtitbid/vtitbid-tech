@@ -29,16 +29,19 @@ class RootComponent : Component.Root, KoinComponent {
 
     private val navbarComponent by inject<Component>(Qualifier.NavbarComponent)
     private val pageContentComponent by inject<Component>(Qualifier.PageContentComponent)
+    private val footerComponent by inject<Component>(Qualifier.FooterComponent)
 
     override fun SimplePanel.render() {
-        width = 100.perc
+        height = 100.perc
 
         deploy(navbarComponent)
 
-        div(className = "container") {
+        div(className = "container h-100 flex-column") {
             marginTop = 5.rem
+            marginBottom = 5.rem
 
             deploy(pageContentComponent)
+            deploy(footerComponent)
         }
     }
 }

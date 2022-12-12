@@ -53,6 +53,10 @@ private fun Module.components() {
     singleOf<Component>(::FormPageComponent) {
         qualifier = Qualifier.FormPageComponent
     }
+
+    singleOf<Component>(::FooterComponent) {
+        qualifier = Qualifier.FooterComponent
+    }
 }
 
 private fun Module.componentRenderer() {

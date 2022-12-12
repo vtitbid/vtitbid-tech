@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.di
+package dev.d1s.vtitbidtech.component
 
-import org.koin.core.qualifier.named
+import io.kvision.html.div
+import io.kvision.html.p
+import io.kvision.panel.SimplePanel
+import org.koin.core.component.KoinComponent
 
-object Qualifier {
+class FooterComponent : Component, KoinComponent {
 
-    val NavbarComponent = named("navbar-component")
-    val PageContentComponent = named("page-content-component")
-    val AboutPageComponent = named("about-page-component")
-    val FormPageComponent = named("form-page-component")
-    val FooterComponent = named("footer-component")
+    override fun SimplePanel.render() {
+        div(className = "my-5 container justify-content-center text-center") {
+            p("© Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>")
+        }
+    }
 }
