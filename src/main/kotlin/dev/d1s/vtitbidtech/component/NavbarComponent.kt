@@ -17,9 +17,9 @@
 package dev.d1s.vtitbidtech.component
 
 import dev.d1s.vtitbidtech.resource.ResourceLocation
-import dev.d1s.vtitbidtech.util.Brand
-import dev.d1s.vtitbidtech.util.Color
-import dev.d1s.vtitbidtech.util.Path
+import dev.d1s.vtitbidtech.util.constant.Brand
+import dev.d1s.vtitbidtech.util.constant.Color
+import dev.d1s.vtitbidtech.util.constant.Path
 import dev.d1s.vtitbidtech.util.pathName
 import io.kvision.core.Container
 import io.kvision.core.Display

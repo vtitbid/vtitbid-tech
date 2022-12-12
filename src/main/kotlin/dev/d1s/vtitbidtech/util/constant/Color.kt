@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.util
+package dev.d1s.vtitbidtech.util.constant
 
 import io.kvision.core.Color
 

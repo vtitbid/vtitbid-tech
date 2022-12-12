@@ -39,10 +39,10 @@ fun SimplePanel.deployYandexFormIframe() {
     }
 }
 
-fun SimplePanel.displayHeading(addReturnButton: Boolean = false, block: SimplePanel.() -> Unit) {
-    div(className = "container mb-5 border-bottom") {
+fun SimplePanel.displayHeading(level: Int = 6, addReturnButton: Boolean = false, block: SimplePanel.() -> Unit) {
+    div(className = "container mt-5 mb-4 border-bottom") {
         div(className = "pb-3 d-flex align-content-center") {
-            h1(className = "display-6 flex-fill") {
+            h1(className = "display-$level flex-fill") {
                 add(SimplePanel().apply(block))
             }
 
@@ -60,5 +60,7 @@ fun SimplePanel.displayHeading(addReturnButton: Boolean = false, block: SimplePa
 }
 
 fun SimplePanel.highlight() {
-    background = Background(Color.name(Col.DARKSEAGREEN))
+    val lightGreen = Color.hex(0xdbfee3)
+
+    background = Background(lightGreen)
 }
