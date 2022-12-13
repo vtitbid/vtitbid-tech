@@ -14,23 +14,9 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.component
+package dev.d1s.vtitbidtech.util.constant
 
-import dev.d1s.vtitbidtech.util.deployYandexFormIframe
-import dev.d1s.vtitbidtech.util.displayHeading
-import io.kvision.html.div
-import io.kvision.panel.SimplePanel
-import org.koin.core.component.KoinComponent
+object Git {
 
-class FormPageComponent : Component, KoinComponent {
-
-    override fun SimplePanel.render() {
-        displayHeading(level = 4, addReturnButton = true) {
-            +"Форма участника"
-        }
-
-        div(className = "d-flex justify-content-center") {
-            deployYandexFormIframe()
-        }
-    }
+    const val ORIGIN_REPOSITORY_URL = "https://github.com/vtitbid/vtitbid-tech"
 }

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.util
+package dev.d1s.vtitbidtech.util.constant
 
-object Brand {
+object Path {
 
-    const val NAME_RUS = "ВТИТБиД.ТЕХ"
+    const val APPLY = "/apply"
 }

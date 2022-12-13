@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.util
+package dev.d1s.vtitbidtech.util.constant
 
-object Path {
+object Brand {
 
-    const val APPLY = "/apply"
+    const val NAME_RUS = "ВТИТБиД.ТЕХ"
+
+    const val COPYRIGHT = "© Copyright 2022 \"${NAME_RUS}\" <info@vtitbid.tech>, " +
+            "Apache License, Version 2.0"
 }

@@ -16,7 +16,11 @@
 
 package dev.d1s.vtitbidtech.component
 
+import dev.d1s.vtitbidtech.Version
+import dev.d1s.vtitbidtech.util.constant.Brand
+import dev.d1s.vtitbidtech.util.constant.Git
 import io.kvision.html.div
+import io.kvision.html.link
 import io.kvision.html.p
 import io.kvision.panel.SimplePanel
 import org.koin.core.component.KoinComponent
@@ -24,8 +28,10 @@ import org.koin.core.component.KoinComponent
 class FooterComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        div(className = "my-5 container justify-content-center text-center") {
-            p("© Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>")
+        div(className = "my-5 container justify-content-center text-center text-secondary pt-5 border-top") {
+            p(Brand.COPYRIGHT)
+            p("v${Version.VERSION}")
+            link("Исходный код на GitHub", Git.ORIGIN_REPOSITORY_URL)
         }
     }
 }

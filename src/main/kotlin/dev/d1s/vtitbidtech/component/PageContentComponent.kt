@@ -17,7 +17,7 @@
 package dev.d1s.vtitbidtech.component
 
 import dev.d1s.vtitbidtech.di.Qualifier
-import dev.d1s.vtitbidtech.util.Path
+import dev.d1s.vtitbidtech.util.constant.Path
 import dev.d1s.vtitbidtech.util.deploy
 import dev.d1s.vtitbidtech.util.pathName
 import io.kvision.html.div
@@ -31,7 +31,7 @@ class PageContentComponent : Component, KoinComponent {
     private val aboutPageComponent by inject<Component>(Qualifier.AboutPageComponent)
 
     override fun SimplePanel.render() {
-        div(className = "container pt-5") {
+        div(className = "container pt-2") {
             when (pathName) {
                 Path.APPLY -> {
                     deploy(formComponent)
