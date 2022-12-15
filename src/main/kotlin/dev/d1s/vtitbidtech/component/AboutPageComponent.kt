@@ -20,6 +20,7 @@ import dev.d1s.vtitbidtech.util.constant.Brand
 import dev.d1s.vtitbidtech.util.constant.Path
 import dev.d1s.vtitbidtech.util.displayHeading
 import dev.d1s.vtitbidtech.util.highlight
+import dev.d1s.vtitbidtech.util.telegramIcon
 import io.kvision.html.*
 import io.kvision.panel.SimplePanel
 import io.kvision.utils.rem
@@ -32,6 +33,7 @@ class AboutPageComponent : Component, KoinComponent {
         aboutAlert()
         aboutList()
         ourWork()
+        ourSocials()
         whyJoin()
         howToJoin()
         largeJoinButton()
@@ -133,6 +135,21 @@ class AboutPageComponent : Component, KoinComponent {
             +(". Мы верим, что эффективность обмена информацией должна соответствовать сегодняшнему веку. " +
                     "Наша деятельность не ограничивается совершенствованием инфообмена: мы ведем исследовательскую деятельность " +
                     "в IT-сфере, изучаем новые инструменты, оптимизируем существующие процессы.")
+        }
+    }
+
+    private fun SimplePanel.ourSocials() {
+        displayHeading {
+            +"Наше медиа"
+        }
+
+        ul(className = "list-unstyled") {
+            li {
+                telegramIcon()
+                link("", Brand.TELEGRAM_CHANNEL_URL) {
+                    button("Мы в Telegram", style = ButtonStyle.LINK, className = "ps-0")
+                }
+            }
         }
     }
 

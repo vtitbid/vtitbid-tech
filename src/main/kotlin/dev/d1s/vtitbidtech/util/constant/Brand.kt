@@ -22,4 +22,6 @@ object Brand {
 
     const val COPYRIGHT = "© Copyright 2022 \"${NAME_RUS}\" <info@vtitbid.tech>, " +
             "Apache License, Version 2.0"
+
+    const val TELEGRAM_CHANNEL_URL = "https://t.me/vtitbid_tech"
 }
