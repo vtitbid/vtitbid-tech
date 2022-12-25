@@ -184,7 +184,7 @@ class AboutPageComponent : Component, KoinComponent {
             link("Вступить", Path.APPLY, className = "btn btn-lg") {
                 role = "button"
 
-                width = 25.rem
+                width = 20.rem
 
                 disableButtonIfNotAdCampaign()
             }
