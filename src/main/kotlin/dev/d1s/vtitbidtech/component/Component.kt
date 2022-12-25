@@ -24,3 +24,9 @@ interface Component {
 
     interface Root : Component
 }
+
+fun SimplePanel.deploy(component: Component) {
+    with(component) {
+        render()
+    }
+}

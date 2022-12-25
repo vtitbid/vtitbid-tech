@@ -50,7 +50,7 @@ private fun Module.components() {
         qualifier = Qualifier.AboutPageComponent
     }
 
-    singleOf<Component>(::FormPageComponent) {
+    singleOf<Component>(::EnrollmentFormPageComponent) {
         qualifier = Qualifier.FormPageComponent
     }
 

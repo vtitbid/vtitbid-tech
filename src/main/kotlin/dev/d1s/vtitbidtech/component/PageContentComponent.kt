@@ -18,7 +18,6 @@ package dev.d1s.vtitbidtech.component
 
 import dev.d1s.vtitbidtech.di.Qualifier
 import dev.d1s.vtitbidtech.util.constant.Path
-import dev.d1s.vtitbidtech.util.deploy
 import dev.d1s.vtitbidtech.util.pathName
 import io.kvision.html.div
 import io.kvision.panel.SimplePanel
