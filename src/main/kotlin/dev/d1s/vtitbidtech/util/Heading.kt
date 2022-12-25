@@ -16,28 +16,10 @@
 
 package dev.d1s.vtitbidtech.util
 
-import dev.d1s.vtitbidtech.component.Component
-import io.kvision.core.*
-import io.kvision.core.Color
+import io.kvision.core.TextDecoration
+import io.kvision.core.TextDecorationLine
 import io.kvision.html.*
 import io.kvision.panel.SimplePanel
-
-private const val YANDEX_FORM_IFRAME_SRC = "https://forms.yandex.com/cloud/639365d6e010dbc6931639f8/?iframe=1"
-private const val YANDEX_FORM_IFRAME_NAME = "ya-form-639365d6e010dbc6931639f8"
-
-fun SimplePanel.deploy(component: Component) {
-    with(component) {
-        render()
-    }
-}
-
-fun SimplePanel.deployYandexFormIframe() {
-    iframe(YANDEX_FORM_IFRAME_SRC, name = YANDEX_FORM_IFRAME_NAME) {
-        setAttribute("frameborder", "0")
-
-        iframeWidth = 650
-    }
-}
 
 fun SimplePanel.displayHeading(level: Int = 6, addReturnButton: Boolean = false, block: SimplePanel.() -> Unit) {
     div(className = "container mt-5 mb-4 border-bottom") {
@@ -57,10 +39,4 @@ fun SimplePanel.displayHeading(level: Int = 6, addReturnButton: Boolean = false,
             }
         }
     }
-}
-
-fun SimplePanel.highlight() {
-    val lightGreen = Color.hex(0xdbfee3)
-
-    background = Background(lightGreen)
 }

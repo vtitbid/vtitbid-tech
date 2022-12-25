@@ -16,25 +16,25 @@
 
 package dev.d1s.vtitbidtech.component
 
-import dev.d1s.vtitbidtech.Version
 import dev.d1s.vtitbidtech.config.Config
-import dev.d1s.vtitbidtech.util.constant.Brand
-import dev.d1s.vtitbidtech.util.githubIcon
+import dev.d1s.vtitbidtech.util.adCampaignEndedAlert
+import dev.d1s.vtitbidtech.util.displayHeading
 import io.kvision.html.div
-import io.kvision.html.link
-import io.kvision.html.p
 import io.kvision.panel.SimplePanel
 import org.koin.core.component.KoinComponent
 
-class FooterComponent : Component, KoinComponent {
+class EnrollmentFormPageComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        div(className = "my-5 container justify-content-center text-center text-secondary pt-5 border-top") {
-            p(Brand.COPYRIGHT)
-            p("v${Version.VERSION}")
-            link("", Config.Git.ORIGIN_REPOSITORY_URL) {
-                githubIcon()
-                +"Исходный код на GitHub"
+        displayHeading(level = 4, addReturnButton = true) {
+            +"Форма участника"
+        }
+
+        div(className = "d-flex justify-content-center") {
+            if (Config.Phase.isAdCampaignEnded()) {
+                adCampaignEndedAlert()
+            } else {
+                deployEnrollmentFormIframe()
             }
         }
     }

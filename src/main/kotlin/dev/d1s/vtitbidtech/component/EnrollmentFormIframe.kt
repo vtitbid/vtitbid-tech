@@ -14,9 +14,16 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.util.constant
+package dev.d1s.vtitbidtech.component
 
-object Git {
+import dev.d1s.vtitbidtech.config.Config
+import io.kvision.html.iframe
+import io.kvision.panel.SimplePanel
 
-    const val ORIGIN_REPOSITORY_URL = "https://github.com/vtitbid/vtitbid-tech"
+fun SimplePanel.deployEnrollmentFormIframe() {
+    iframe(Config.EnrollmentFormIframe.SRC, name = Config.EnrollmentFormIframe.NAME) {
+        setAttribute("frameborder", "0")
+
+        iframeWidth = 650
+    }
 }

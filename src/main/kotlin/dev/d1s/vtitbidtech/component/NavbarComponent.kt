@@ -20,11 +20,15 @@ import dev.d1s.vtitbidtech.resource.ResourceLocation
 import dev.d1s.vtitbidtech.util.constant.Brand
 import dev.d1s.vtitbidtech.util.constant.Color
 import dev.d1s.vtitbidtech.util.constant.Path
+import dev.d1s.vtitbidtech.util.disableButtonIfNotAdCampaign
 import dev.d1s.vtitbidtech.util.pathName
 import io.kvision.core.Container
 import io.kvision.core.Display
 import io.kvision.core.style
-import io.kvision.html.*
+import io.kvision.html.div
+import io.kvision.html.image
+import io.kvision.html.link
+import io.kvision.html.nav
 import io.kvision.panel.SimplePanel
 import io.kvision.utils.em
 import org.koin.core.component.KoinComponent
@@ -64,10 +68,10 @@ class NavbarComponent : Component, KoinComponent {
 
     private fun Container.becomeMemberButton() {
         if (pathName != Path.APPLY) {
-            link("", Path.APPLY) {
-                button("Стать участником", style = ButtonStyle.OUTLINESUCCESS) {
-                    size = ButtonSize.LARGE
-                }
+            link("Стать участником", Path.APPLY, className = "btn btn-lg") {
+                role = "button"
+
+                disableButtonIfNotAdCampaign()
             }
         }
     }

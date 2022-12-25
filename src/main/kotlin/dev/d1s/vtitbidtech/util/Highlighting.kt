@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.component.renderer
+package dev.d1s.vtitbidtech.util
 
-import dev.d1s.vtitbidtech.component.Component
-import dev.d1s.vtitbidtech.component.deploy
-import io.kvision.panel.Root
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
+import io.kvision.core.Background
+import io.kvision.core.Color
+import io.kvision.html.span
+import io.kvision.panel.SimplePanel
 
-class RootComponentRenderer : ComponentRenderer, KoinComponent {
-
-    private val rootComponent by inject<Component.Root>()
-
-    override fun render(root: Root) {
-        root.deploy(rootComponent)
+fun SimplePanel.highlightedSpan(content: String) {
+    span(content) {
+        highlight()
     }
+}
+
+private fun SimplePanel.highlight() {
+    val lightGreen = Color.hex(0xdbfee3)
+
+    background = Background(lightGreen)
 }

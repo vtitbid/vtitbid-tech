@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package dev.d1s.vtitbidtech.component
+package dev.d1s.vtitbidtech.util
 
-import dev.d1s.vtitbidtech.util.deployYandexFormIframe
-import dev.d1s.vtitbidtech.util.displayHeading
-import io.kvision.html.div
-import io.kvision.panel.SimplePanel
-import org.koin.core.component.KoinComponent
+import dev.d1s.vtitbidtech.config.Config
+import io.kvision.html.Link
 
-class FormPageComponent : Component, KoinComponent {
+fun Link.disableButtonIfNotAdCampaign() {
+    if (Config.Phase.isAdCampaignEnded()) {
+        addCssClass("btn-outline-secondary")
 
-    override fun SimplePanel.render() {
-        displayHeading(level = 4, addReturnButton = true) {
-            +"Форма участника"
-        }
-
-        div(className = "d-flex justify-content-center") {
-            deployYandexFormIframe()
-        }
+        disableButton()
+    } else {
+        addCssClass("btn-outline-success")
     }
+}
+
+private fun Link.disableButton() {
+    addCssClass("disabled")
+    tabindex = -1
+    setAttribute("aria-disabled", "true")
 }

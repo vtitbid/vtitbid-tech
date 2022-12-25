@@ -17,7 +17,6 @@
 package dev.d1s.vtitbidtech.component
 
 import dev.d1s.vtitbidtech.di.Qualifier
-import dev.d1s.vtitbidtech.util.deploy
 import io.kvision.html.div
 import io.kvision.panel.SimplePanel
 import io.kvision.utils.perc

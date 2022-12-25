@@ -16,11 +16,10 @@
 
 package dev.d1s.vtitbidtech.component
 
+import dev.d1s.vtitbidtech.config.Config
+import dev.d1s.vtitbidtech.util.*
 import dev.d1s.vtitbidtech.util.constant.Brand
 import dev.d1s.vtitbidtech.util.constant.Path
-import dev.d1s.vtitbidtech.util.displayHeading
-import dev.d1s.vtitbidtech.util.highlight
-import dev.d1s.vtitbidtech.util.telegramIcon
 import io.kvision.html.*
 import io.kvision.panel.SimplePanel
 import io.kvision.utils.rem
@@ -30,6 +29,7 @@ class AboutPageComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
         heading()
+        adCampaignEndedAlert()
         aboutAlert()
         aboutList()
         ourWork()
@@ -43,20 +43,7 @@ class AboutPageComponent : Component, KoinComponent {
         displayHeading(level = 4) {
             +"Строим информационное будущее техникума. "
 
-            span("Вместе.") {
-                highlight()
-            }
-        }
-    }
-
-    private fun SimplePanel.aboutAlert() {
-        div(className = "mb-5") {
-            div(className = "alert alert-success text-center") {
-                tag(TAG.BLOCKQUOTE, className = "blockquote") {
-                    +("${Brand.NAME_RUS} создает программные продукты нового поколения, " +
-                            "совершенствующие информационную среду ВТИТБиД.")
-                }
-            }
+            highlightedSpan("Вместе.")
         }
     }
 
@@ -69,9 +56,7 @@ class AboutPageComponent : Component, KoinComponent {
             li {
                 +"Насыщенная "
 
-                span("командная") {
-                    highlight()
-                }
+                highlightedSpan("командная")
 
                 +" атмосфера."
             }
@@ -79,9 +64,7 @@ class AboutPageComponent : Component, KoinComponent {
             li {
                 +"Клуб, в котором студенты развивают свои навыки и получают "
 
-                span("новый опыт") {
-                    highlight()
-                }
+                highlightedSpan("новый опыт")
 
                 +"."
             }
@@ -89,9 +72,7 @@ class AboutPageComponent : Component, KoinComponent {
             li {
                 +"Вектор информационного "
 
-                span("развития") {
-                    highlight()
-                }
+                highlightedSpan("развития")
 
                 +" ВТИТБиД."
             }
@@ -99,9 +80,7 @@ class AboutPageComponent : Component, KoinComponent {
             li {
                 +"Место, где "
 
-                span("сами студенты") {
-                    highlight()
-                }
+                highlightedSpan("сами студенты")
 
                 +" создают программный продукт для техникума."
             }
@@ -110,9 +89,7 @@ class AboutPageComponent : Component, KoinComponent {
         p {
             +"И не только: в клубе ${Brand.NAME_RUS} мы решаем "
 
-            span("сложные и интересные задачи") {
-                highlight()
-            }
+            highlightedSpan("сложные и интересные задачи")
 
             +", применяя самые разные подходы."
         }
@@ -128,9 +105,7 @@ class AboutPageComponent : Component, KoinComponent {
                     "Мы создаем программный продукт для тысячи студентов, преподавателей, " +
                     "посредством которого, они ")
 
-            span("\"на лету\" обмениваются информацией") {
-                highlight()
-            }
+            highlightedSpan("\"на лету\" обмениваются информацией")
 
             +(". Мы верим, что эффективность обмена информацией должна соответствовать сегодняшнему веку. " +
                     "Наша деятельность не ограничивается совершенствованием инфообмена: мы ведем исследовательскую деятельность " +
@@ -144,11 +119,18 @@ class AboutPageComponent : Component, KoinComponent {
         }
 
         ul(className = "list-unstyled") {
-            li {
+            social("Telegram", Config.Social.TELEGRAM_CHANNEL_URL) {
                 telegramIcon()
-                link("", Brand.TELEGRAM_CHANNEL_URL) {
-                    button("Мы в Telegram", style = ButtonStyle.LINK, className = "ps-0")
-                }
+            }
+        }
+    }
+
+    private fun Ul.social(name: String, url: String, icon: SimplePanel.() -> Unit) {
+        li {
+            link("", url) {
+                icon()
+
+                button("Мы в $name", style = ButtonStyle.LINK, className = "ps-0")
             }
         }
     }
@@ -157,9 +139,7 @@ class AboutPageComponent : Component, KoinComponent {
         displayHeading {
             +"Почему "
 
-            span("стоит") {
-                highlight()
-            }
+            highlightedSpan("стоит")
 
             +" вступить в наш клуб?"
         }
@@ -167,15 +147,11 @@ class AboutPageComponent : Component, KoinComponent {
         p {
             +"В клубе можно получить "
 
-            span("много нового опыта") {
-                highlight()
-            }
+            highlightedSpan("много нового опыта")
 
             +". Каждый участник команды вносит "
 
-            span("свой вклад") {
-                highlight()
-            }
+            highlightedSpan("свой вклад")
 
             +" в развитие ВТИТБиД. Каждый выполняет сложную, а поэтому, интересную работу."
         }
@@ -193,27 +169,28 @@ class AboutPageComponent : Component, KoinComponent {
         p {
             +"В клуб приветствуются студенты, имеющие "
 
-            span("базовый опыт в разработке ПО") {
-                highlight()
-            }
+            highlightedSpan("базовый опыт в разработке ПО")
 
             +". Особенное внимание обращается студентам, "
 
-            span("учащихся на техническую, информационную специальность") {
-                highlight()
-            }
+            highlightedSpan("учащихся на техническую, информационную специальность")
 
             +"."
         }
     }
 
     private fun SimplePanel.largeJoinButton() {
-        div(className = "mt-5 d-flex justify-content-center align-content-center") {
-            link("", Path.APPLY) {
-                button("Вступить", style = ButtonStyle.OUTLINESUCCESS, className = "btn-lg text-center") {
-                    width = 20.rem
-                    height = 5.rem
-                }
+        div(className = "mt-5 d-flex flex-column align-items-center") {
+            link("Вступить", Path.APPLY, className = "btn btn-lg") {
+                role = "button"
+
+                width = 25.rem
+
+                disableButtonIfNotAdCampaign()
+            }
+
+            if (Config.Phase.isAdCampaignEnded()) {
+                p("В данный момент мы не набираем новых участников.", className = "text-secondary mt-3")
             }
         }
     }
