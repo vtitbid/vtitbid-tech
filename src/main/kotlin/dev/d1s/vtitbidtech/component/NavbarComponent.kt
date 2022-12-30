@@ -22,6 +22,7 @@ import dev.d1s.vtitbidtech.util.constant.Color
 import dev.d1s.vtitbidtech.util.constant.Path
 import dev.d1s.vtitbidtech.util.disableButtonIfNotAdCampaign
 import dev.d1s.vtitbidtech.util.pathName
+import io.kvision.core.Background
 import io.kvision.core.Container
 import io.kvision.core.Display
 import io.kvision.core.style
@@ -36,7 +37,9 @@ import org.koin.core.component.KoinComponent
 class NavbarComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        nav(className = "navbar navbar-expand-lg navbar-light bg-light fixed-top shadow") {
+        nav(className = "navbar navbar-expand-lg fixed-top shadow") {
+            background = Background(Color.BrighterDark)
+
             div(className = "container") {
                 logo()
                 name()

@@ -16,8 +16,8 @@
 
 package dev.d1s.vtitbidtech.util
 
+import dev.d1s.vtitbidtech.util.constant.Color
 import io.kvision.core.Background
-import io.kvision.core.Color
 import io.kvision.html.span
 import io.kvision.panel.SimplePanel
 
@@ -28,7 +28,8 @@ fun SimplePanel.highlightedSpan(content: String) {
 }
 
 private fun SimplePanel.highlight() {
-    val lightGreen = Color.hex(0xdbfee3)
+    background = Background(Color.DarkGreen)
 
-    background = Background(lightGreen)
+    addCssClass("rounded")
+    addCssClass("px-2")
 }

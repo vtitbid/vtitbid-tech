@@ -29,7 +29,7 @@ import org.koin.core.component.KoinComponent
 class FooterComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        div(className = "my-5 container justify-content-center text-center text-secondary pt-5 border-top") {
+        div(className = "container mt-5 text-center text-secondary") {
             p(Brand.COPYRIGHT)
             p("v${Version.VERSION}")
             link("", Config.Git.ORIGIN_REPOSITORY_URL) {
