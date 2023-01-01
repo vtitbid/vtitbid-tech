@@ -18,6 +18,8 @@ package dev.d1s.vtitbidtech.util
 
 import dev.d1s.vtitbidtech.config.Config
 import dev.d1s.vtitbidtech.util.constant.Brand
+import dev.d1s.vtitbidtech.util.constant.Color
+import io.kvision.core.Background
 import io.kvision.html.TAG
 import io.kvision.html.div
 import io.kvision.html.tag
@@ -36,15 +38,24 @@ fun SimplePanel.aboutAlert() {
     )
 }
 
-private enum class AlertStyle(val raw: String) {
+private enum class AlertStyle {
 
-    SUCCESS("success"), DANGER("danger")
+    DARK, DANGER
 }
 
-private fun SimplePanel.alertBox(content: String, style: AlertStyle = AlertStyle.SUCCESS) {
+private fun SimplePanel.alertBox(content: String, style: AlertStyle = AlertStyle.DARK) {
     div(className = "mb-4") {
+        background = when (style) {
+            AlertStyle.DARK -> {
+                Background(Color.BrighterDark)
+            }
 
-        div(className = "alert alert-${style.raw} text-center") {
+            AlertStyle.DANGER -> {
+                Background(Color.DarkRed)
+            }
+        }
+
+        div(className = "alert text-center") {
             tag(TAG.BLOCKQUOTE, className = "blockquote") {
                 +content
             }

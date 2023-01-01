@@ -17,10 +17,12 @@
 package dev.d1s.vtitbidtech.component
 
 import dev.d1s.vtitbidtech.di.Qualifier
+import dev.d1s.vtitbidtech.util.constant.Color
+import io.kvision.core.Background
 import io.kvision.html.div
 import io.kvision.panel.SimplePanel
-import io.kvision.utils.perc
 import io.kvision.utils.rem
+import io.kvision.utils.vh
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -31,13 +33,17 @@ class RootComponent : Component.Root, KoinComponent {
     private val footerComponent by inject<Component>(Qualifier.FooterComponent)
 
     override fun SimplePanel.render() {
-        height = 100.perc
+        minHeight = 100.vh
+
+        background = Background(Color.Dark)
 
         deploy(navbarComponent)
 
-        div(className = "container h-100 flex-column") {
+        div(className = "container") {
             marginTop = 5.rem
-            marginBottom = 5.rem
+            paddingBottom = 5.rem
+
+            color = Color.LightGray
 
             deploy(pageContentComponent)
             deploy(footerComponent)

@@ -164,7 +164,7 @@ class AboutPageComponent : Component, KoinComponent {
 
         p("Вступить очень легко. Достаточно нажать на кнопку ниже и отправить свою анкету.")
 
-        p("Ограничения", className = "lead pb-2 border-bottom")
+        p("Ограничения", className = "lead pb-2")
 
         p {
             +"В клуб приветствуются студенты, имеющие "

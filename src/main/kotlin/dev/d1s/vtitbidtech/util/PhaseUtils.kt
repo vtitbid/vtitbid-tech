@@ -21,7 +21,7 @@ import io.kvision.html.Link
 
 fun Link.disableButtonIfNotAdCampaign() {
     if (Config.Phase.isAdCampaignEnded()) {
-        addCssClass("btn-outline-secondary")
+        addCssClass("btn-outline-success")
 
         disableButton()
     } else {

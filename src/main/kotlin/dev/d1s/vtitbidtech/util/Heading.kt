@@ -22,9 +22,9 @@ import io.kvision.html.*
 import io.kvision.panel.SimplePanel
 
 fun SimplePanel.displayHeading(level: Int = 6, addReturnButton: Boolean = false, block: SimplePanel.() -> Unit) {
-    div(className = "container mt-5 mb-4 border-bottom") {
+    div(className = "container ps-0 mt-5 mb-4") {
         div(className = "pb-3 d-flex align-content-center") {
-            h1(className = "display-$level flex-fill") {
+            h1(className = "display-$level text-decoration-underline flex-fill") {
                 add(SimplePanel().apply(block))
             }
 

@@ -34,7 +34,11 @@ class EnrollmentFormPageComponent : Component, KoinComponent {
             if (Config.Phase.isAdCampaignEnded()) {
                 adCampaignEndedAlert()
             } else {
-                deployEnrollmentFormIframe()
+                div(className = "card") {
+                    div(className = "card-body px-5 pt-5") {
+                        deployEnrollmentFormIframe()
+                    }
+                }
             }
         }
     }

@@ -20,5 +20,15 @@ import io.kvision.core.Color
 
 object Color {
 
-    val Green = Color.hex(0x027360)
+    val Green = Color.hex(0x039079)
+
+    val DarkGreen = Color.hex(0x015648)
+
+    val Dark = Color.hex(0x212121)
+
+    val BrighterDark = Color.hex(0x2d2d2d)
+
+    val DarkRed = Color.hex(0xb20000)
+
+    val LightGray = Color.hex(0xa6a6a6)
 }
