@@ -25,4 +25,5 @@ object Qualifier {
     val AboutPageComponent = named("about-page-component")
     val FormPageComponent = named("form-page-component")
     val FooterComponent = named("footer-component")
+    val EasterEggComponent = named("easter-egg-component")
 }

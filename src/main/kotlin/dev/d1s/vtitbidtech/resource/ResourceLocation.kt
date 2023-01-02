@@ -21,4 +21,6 @@ import io.kvision.core.ResString
 object ResourceLocation {
 
     const val LOGO: ResString = "vtitbid.tech-logo-no-padding.svg"
+
+    const val EASTER_EGG_VIDEO: ResString = "waa.mp4"
 }

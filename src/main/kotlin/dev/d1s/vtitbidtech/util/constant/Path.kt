@@ -19,4 +19,6 @@ package dev.d1s.vtitbidtech.util.constant
 object Path {
 
     const val APPLY = "/apply"
+
+    const val EASTER_EGG = "/waa"
 }

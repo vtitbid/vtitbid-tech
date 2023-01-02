@@ -27,6 +27,7 @@ import org.koin.core.component.inject
 class PageContentComponent : Component, KoinComponent {
 
     private val formComponent by inject<Component>(Qualifier.FormPageComponent)
+    private val easterEggComponent by inject<Component>(Qualifier.EasterEggComponent)
     private val aboutPageComponent by inject<Component>(Qualifier.AboutPageComponent)
 
     override fun SimplePanel.render() {
@@ -34,6 +35,10 @@ class PageContentComponent : Component, KoinComponent {
             when (pathName) {
                 Path.APPLY -> {
                     deploy(formComponent)
+                }
+
+                Path.EASTER_EGG -> {
+                    deploy(easterEggComponent)
                 }
 
                 else -> {

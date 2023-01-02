@@ -16,25 +16,22 @@
 
 package dev.d1s.vtitbidtech.component
 
-import dev.d1s.vtitbidtech.config.Config
-import dev.d1s.vtitbidtech.util.adCampaignEndedAlert
-import dev.d1s.vtitbidtech.util.displayHeading
+import dev.d1s.vtitbidtech.resource.ResourceLocation
+import io.kvision.html.TAG
 import io.kvision.html.div
+import io.kvision.html.tag
 import io.kvision.panel.SimplePanel
 import org.koin.core.component.KoinComponent
 
-class EnrollmentFormPageComponent : Component, KoinComponent {
+class EasterEggComponent : Component, KoinComponent {
 
     override fun SimplePanel.render() {
-        displayHeading(level = 4, addReturnButton = true) {
-            +"Форма участника"
-        }
+        div(className = "d-flex justify-content-center mt-5") {
+            tag(TAG.OBJECT) {
+                setAttribute("width", "600")
+                setAttribute("height", "500")
 
-        div(className = "d-flex justify-content-center") {
-            if (Config.Phase.isAdCampaignEnded()) {
-                adCampaignEndedAlert()
-            } else {
-                deployEnrollmentFormIframe()
+                setAttribute("data", ResourceLocation.EASTER_EGG_VIDEO)
             }
         }
     }

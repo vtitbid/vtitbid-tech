@@ -19,11 +19,14 @@ package dev.d1s.vtitbidtech.util
 import dev.d1s.vtitbidtech.config.Config
 import dev.d1s.vtitbidtech.util.constant.Brand
 import dev.d1s.vtitbidtech.util.constant.Color
+import dev.d1s.vtitbidtech.util.constant.Path
 import io.kvision.core.Background
+import io.kvision.core.onClick
 import io.kvision.html.TAG
 import io.kvision.html.div
 import io.kvision.html.tag
 import io.kvision.panel.SimplePanel
+import kotlinx.browser.document
 
 fun SimplePanel.adCampaignEndedAlert() {
     if (Config.Phase.isAdCampaignEnded()) {
@@ -45,19 +48,23 @@ private enum class AlertStyle {
 
 private fun SimplePanel.alertBox(content: String, style: AlertStyle = AlertStyle.DARK) {
     div(className = "mb-4") {
-        background = when (style) {
-            AlertStyle.DARK -> {
-                Background(Color.BrighterDark)
-            }
-
-            AlertStyle.DANGER -> {
-                Background(Color.DarkRed)
-            }
-        }
-
         div(className = "alert text-center") {
+            background = when (style) {
+                AlertStyle.DARK -> {
+                    Background(Color.BrighterDark)
+                }
+
+                AlertStyle.DANGER -> {
+                    Background(Color.DarkRed)
+                }
+            }
+
             tag(TAG.BLOCKQUOTE, className = "blockquote") {
                 +content
+            }
+
+            onClick {
+                document.location?.href = Path.EASTER_EGG
             }
         }
     }

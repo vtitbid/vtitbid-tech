@@ -57,6 +57,10 @@ private fun Module.components() {
     singleOf<Component>(::FooterComponent) {
         qualifier = Qualifier.FooterComponent
     }
+
+    singleOf<Component>(::EasterEggComponent) {
+        qualifier = Qualifier.EasterEggComponent
+    }
 }
 
 private fun Module.componentRenderer() {
