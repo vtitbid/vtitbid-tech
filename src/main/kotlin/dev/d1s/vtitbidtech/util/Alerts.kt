@@ -21,16 +21,23 @@ import dev.d1s.vtitbidtech.util.constant.Brand
 import dev.d1s.vtitbidtech.util.constant.Color
 import dev.d1s.vtitbidtech.util.constant.Path
 import io.kvision.core.Background
+import io.kvision.core.Outline
 import io.kvision.core.onClick
 import io.kvision.html.TAG
 import io.kvision.html.div
 import io.kvision.html.tag
 import io.kvision.panel.SimplePanel
+import io.kvision.utils.rem
 import kotlinx.browser.document
+
+private enum class AlertStyle {
+
+    DARK, DANGER
+}
 
 fun SimplePanel.adCampaignEndedAlert() {
     if (Config.Phase.isAdCampaignEnded()) {
-        alertBox("Извините, но ${Brand.NAME_RUS} больше не принимает новых участников.", AlertStyle.DANGER)
+        alertBox("Извините, но ${Brand.NAME_RUS} больше не принимает новых участников.", AlertStyle.DANGER, addGreenOutline = false)
     }
 }
 
@@ -41,31 +48,46 @@ fun SimplePanel.aboutAlert() {
     )
 }
 
-private enum class AlertStyle {
-
-    DARK, DANGER
-}
-
-private fun SimplePanel.alertBox(content: String, style: AlertStyle = AlertStyle.DARK) {
+private fun SimplePanel.alertBox(
+    content: String,
+    style: AlertStyle = AlertStyle.DARK,
+    addGreenOutline: Boolean = true
+) {
     div(className = "mb-4") {
         div(className = "alert text-center") {
-            background = when (style) {
-                AlertStyle.DARK -> {
-                    Background(Color.BrighterDark)
-                }
-
-                AlertStyle.DANGER -> {
-                    Background(Color.DarkRed)
-                }
-            }
+            setBackground(style)
 
             tag(TAG.BLOCKQUOTE, className = "blockquote") {
                 +content
             }
 
-            onClick {
-                document.location?.href = Path.EASTER_EGG
+            if (addGreenOutline) {
+                addGreenOutline()
             }
+
+            addEasterEggHandler()
         }
+    }
+}
+
+private fun SimplePanel.addGreenOutline() {
+    outline = Outline(color = Color.Green, width = 3.rem)
+}
+
+private fun SimplePanel.setBackground(style: AlertStyle) {
+    background = when (style) {
+        AlertStyle.DARK -> {
+            Background(Color.BrighterDark)
+        }
+
+        AlertStyle.DANGER -> {
+            Background(Color.DarkRed)
+        }
+    }
+}
+
+private fun SimplePanel.addEasterEggHandler() {
+    onClick {
+        document.location?.href = Path.EASTER_EGG
     }
 }
