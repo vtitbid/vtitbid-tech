@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 VTITBiD.TECH Research Group <info@vtitbid.tech>
+ * Copyright 2022-2023 VTITBiD.TECH Research Group <info@vtitbid.tech>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,6 @@ object Brand {
 
     const val NAME_RUS = "ВТИТБиД.ТЕХ"
 
-    const val COPYRIGHT = "© Copyright 2022 \"${NAME_RUS}\" <${Config.Social.E_MAIL}>, " +
+    const val COPYRIGHT = "© Copyright 2022-2023 \"${NAME_RUS}\" <${Config.Social.E_MAIL}>, " +
             "Apache License, Version 2.0"
 }
