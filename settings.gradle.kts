@@ -28,7 +28,6 @@ pluginManagement {
         val kvisionVersion: String by settings
 
         kotlin("js") version kotlinVersion
-        kotlin("plugin.serialization") version kotlinVersion
         id("io.kvision") version kvisionVersion
     }
 }
